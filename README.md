@@ -1,5 +1,5 @@
-# {{ Course Name }}
-## Full Stack Course - {{ Start Date }}
+# {{ Learn 2 Code }}
+## Full Stack Course - {{ 09.11.2020 }}
 
 ### ✏️ Homework
 
