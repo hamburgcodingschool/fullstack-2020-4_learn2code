@@ -11,14 +11,14 @@ Homework 1 (Deadline 11.11.2020):
     - [] how much does the driver have to pay?
     - [] how much does each other passenger have to pay?
 
-3. You are given two numbers as input. Print only the strictly largest value.
+3. Start with two numerical values. Print only the strictly largest value.
 
-    `Example Input: a = 15; b = 20`
+    `Example Variables: a = 15; b = 20`
 
     `Print: 20`
 
-4. You are given three numbers as input. Print only the strictly largest value.
+4. Start with three numerical values. Print only the strictly largest value.
 
-    `Example Input: a = 15; b = 20; c = 25`
+    `Example Variables: a = 15; b = 20; c = 25`
 
     `Print: 25`
