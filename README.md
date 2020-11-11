@@ -3,16 +3,15 @@
 
 ### ✏️ Homework
 
-- Homework will be posted here
+- [Homework 1](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/homework/homework_1.md)
 
 ### 📄 Docs
 
-- [Lesson Summary](https://...)
+- [Handout](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/Handout%20-%20Learn%20to%20Code%202020-11.pdf)
 
-- [Handout](https://...)
+- [Outline](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/Outline%20-%20Learn%20to%20Code%202020-11.pdf)
 
-- [Outline](https://...)
-
+- [Intro Slides](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/Learn%202%20Code%20-%20Intro%20Slides.pdf)
 
 ### 🤔 Questions?
 
