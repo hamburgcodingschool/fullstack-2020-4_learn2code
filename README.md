@@ -4,6 +4,7 @@
 ### ✏️ Homework
 
 - [Homework 1](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/homework/homework_1.md)
+- [Homework 2](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/homework/homework_2.md)
 
 ### 📄 Docs
 
@@ -12,6 +13,8 @@
 - [Outline](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/Outline%20-%20Learn%20to%20Code%202020-11.pdf)
 
 - [Intro Slides](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/Learn%202%20Code%20-%20Intro%20Slides.pdf)
+
+- [Lesson 2 Quiz](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/docs/l2_slides.pdf)
 
 ### 🤔 Questions?
 
