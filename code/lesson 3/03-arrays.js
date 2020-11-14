@@ -21,7 +21,7 @@ let under18 = 0;
 let over18 = 0;
 let legalAge = 18;
 
-for (i=0; i<7; i++){
+for (let i=0; i<7; i++){
     console.log("What is the value of i? " + i);
     if (ages[i] < legalAge) {
         under18++;
