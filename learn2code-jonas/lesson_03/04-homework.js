@@ -9,16 +9,16 @@
 //   - else just print the number
 
 for (var i = 0; i <= 100; i++) {
-    if (i % 3 === 0) {
+    if (i % 3 === 0 && i % 5 === 0) {
         console.log("ping");
-    } else if (i % 5 === 0) {
+    } else if (i % 3 === 0) {
         console.log("pong");
-    } else if (i % 3 === 0 && i % 5 === 0) {
+    } else if (i % 5 === 0) {
         console.log("pingpong");
     } else {
         console.log(i);
     }
-};
+}
 
 console.log("-----")
 
@@ -26,7 +26,7 @@ console.log("-----")
 // 2. Calculate the sum of all values in an array.
 var values = [12, 13, 14];
 var sum = 0;
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < values.length; i++) {
     sum += values[i];
 }
 console.log(sum);
@@ -46,7 +46,7 @@ for (let i = 0; i < 3; i++) {
         // if larger, max takes that value;
         max = values01[i];
     }
-};
+}
 
 console.log(max);
 // max should be 14
@@ -66,7 +66,7 @@ for (let i = 0; i < 3; i++) {
         // if smaller, min takes that value;
         min = values02[i];
     }
-};
+}
 
 console.log(min);
 // min should be 12

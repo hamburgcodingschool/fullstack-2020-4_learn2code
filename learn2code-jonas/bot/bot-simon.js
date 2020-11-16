@@ -96,7 +96,7 @@ for ( var i = 0; i < values.length; i++ ) {
         minimum = values[i];
     }
     total += values[i];
-};
+}
 console.log( total );
 average = total / values.length;
 
