@@ -57,7 +57,7 @@ for (var i = 0; i < number; i++) {
 console.log(songText);
 
 
-console.log("-----");
+console.log("\n-----\n");
 
 
 var values = [];
