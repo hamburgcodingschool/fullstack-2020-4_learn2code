@@ -68,7 +68,7 @@ let names = [];
 
 for ( let i = 0; i < positions.length; i++ ) {
     customerPosition = positions[ i ];
-    names.push( customers[ customerPosition ] );
+    names.push( customers[ customerPositionsay ] );
 }
 
 console.log(names);
