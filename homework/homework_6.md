@@ -1,29 +1,29 @@
-###### Refactor the existing code
+##### Refactor the chatbot code you already have
 
 We now know enough to make the communication with the bot much nicer. Using while loops and functions, we can refactor the code we have so far.
 
-The starting code makes the bot display a number of options. After we select an option, we can call a function that implements that action.
+The [starting code](https://github.com/hamburgcodingschool/fullstack-2020-4_learn2code/blob/main/code/lesson%206/hw_6.js) makes the bot display a number of options. After we select an option, we can call a function that implements that action.
 
 
 Copy the code you have into different functions. Ask yourself the following:
 
-- [] What should this function do?
-- [] What parameters does this function need?
-- [] What does this function return?
-- [] Is there something that you need to remove from your code to make it work?
+- [ ] What should this function do?
+- [ ] What parameters does this function need?
+- [ ] What does this function return?
+- [ ] Is there something that you need to remove from your code to make it work?
 
 Refactor the following functionalities into separate functions:
 
-- [] Sally greets the user (hw 2)
-- [] Sally guesses your number (hw 2)
-- [] Sally sings a song  (hw 3)
-- [] Sally does statistics on an array of numbers (hw 3)
-- [] Sally makes you guess a number   (hw 4)
+- [ ] Sally greets the user (hw 2)
+- [ ] Sally guesses your number (hw 2)
+- [ ] Sally sings a song  (hw 3)
+- [ ] Sally does statistics on an array of numbers (hw 3)
+- [ ] Sally makes you guess a number   (hw 4)
 
 
-##### Sally - Stage 4
+### Sally - Stage 4
 
-##### 4.1 Sentence Analysis
+#### 4.1 Sentence Analysis
 
 Sally is turning into a sophisticated bot. It can now analyze your sentences and tell you some fun information about them.
 
@@ -59,12 +59,12 @@ I think dogs are super nice but cats are super *** and ********.
 
 Make Sally encode some messages for you. The bot should:
 
-- [] takes some text as input from the console;
-- [] parses the text letter by letter;
-- [] converts each letter to another letter according to the Cipher Rule;
-- [] prints out the encrypted text;
+- [ ] take some text as input from the console;
+- [ ] parse the text letter by letter;
+- [ ] convert each letter to another letter according to the Cipher Rule;
+- [ ] print out the encrypted text;
 
-###### The Cipher Rule
+#### The Cipher Rule
 
 Each letter gets shifted to the right by 3 places. As a result, 'a' becomes 'd', 'e' becomes 'h'. The last three letters in the alphabet are wrapped around to the beginning: 'x' becomes 'a', 'y' becomes 'b' and 'z' becomes 'c'. Non-letter characters are not modified.
 
@@ -93,6 +93,7 @@ kl l dp sdxo
       alphabet[1] - will be the letter 'b'
 
 **Hint 3:** You can get started with the following concepts:
+
 - for Loops
 - building a string letter by letter
 - array operations
