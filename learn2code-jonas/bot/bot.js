@@ -277,20 +277,60 @@ function sentenceAnalysis() {
 
 
 function encipherStuff() {
-    console.log("\n-----\n");
     let input = readlineSync.question("Hey! Tell me something to encipher.\n");
     // Define alphabet
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let output = "";
     for (let i = 0; i < input.length; i++) {
-        let currentIndex = alphabet.indexOf(input[i]);
-        console.log(input[i]);
-        console.log(currentIndex);
-        // Get index of letter
-        // Calculate new index
-        // Replace letter with new letter
+        if (alphabet.includes(input[i])) {
+            // Get current ndex of current letter from input, inside string alphabet
+            let currentIndex = alphabet.indexOf(input[i]);
+            // Calculate new index
+            let newIndex = currentIndex + 3;
+            // If new index is larger than alphabet is long, deduct the length of alphabet, to start mapping from string beginning again
+            if (newIndex >= alphabet.length) {
+                // Add letter on position of new index inside alphabet to output string
+                output += alphabet[newIndex - alphabet.length];
+            } else {
+                // Add letter on position of new index inside alphabet to output string
+                output += alphabet[newIndex];
+            }
+        } else {
+            // Add existing letter to putput string as is
+            output += input[i];
+        }
+
     }
+    console.log(output);
+    console.log("\n-----\n");
 }
 
 function decipherStuff() {
+    let input = readlineSync.question("Hey! Tell me something to encipher.\n");
+    // Define alphabet
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let step = 3;
+    let output = "";
+    for (let i = 0; i < input.length; i++) {
+        if (alphabet.includes(input[i])) {
+            // Get current ndex of current letter from input, inside string alphabet
+            let currentIndex = alphabet.indexOf(input[i]);
+            // Calculate new index
+            let newIndex = currentIndex - step;
+            // If new index is larger than alphabet is long, deduct the length of alphabet, to start mapping from string beginning again
+            if (newIndex < 0) {
+                // Add letter on position of new index inside alphabet to output string
+                output += alphabet[newIndex + step];
+            } else {
+                // Add letter on position of new index inside alphabet to output string
+                output += alphabet[newIndex];
+            }
+        } else {
+            // Add existing letter to putput string as is
+            output += input[i];
+        }
 
+    }
+    console.log(output);
+    console.log("\n-----\n");
 }
