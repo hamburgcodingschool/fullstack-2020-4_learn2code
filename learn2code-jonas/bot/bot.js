@@ -21,7 +21,8 @@ while (selectedOption !== -1) {
             "Calculate your social media usage of the last days?",
             "Play a number guessing game with you?",
             "Analyze a sentence for you?",
-            "Cipher stuff for you?"
+            "Encipher stuff for you?",
+            "Decipher stuff for you?"
         ],
         selectedOption = readlineSync.keyInSelect(options, 'What do you want me to do?');
 
@@ -41,7 +42,9 @@ while (selectedOption !== -1) {
     } else if (selectedOption === 4) {
         sentenceAnalysis();
     } else if (selectedOption === 5) {
-        cipherStuff();
+        encipherStuff();
+    } else if (selectedOption === 6) {
+        decipherStuff()
     }
 }
 
@@ -162,6 +165,7 @@ function guessNumberGame() {
 }
 
 function sentenceAnalysis() {
+    console.log("\n-----\n");
     let sentenceInput = readlineSync.question("Hey! Tell me a sentence in englisch or german, I'll do a grammar check for you.\n");
     let sentenceToAnalyze = sentenceInput;
     // console.log(sentenceToAnalyze);
@@ -172,12 +176,12 @@ function sentenceAnalysis() {
 
     //Get the end of the sentence ., ! or ?, based on a regular expression and store it for later use.
     let sentenceEnd = "";
-    if (sentenceToAnalyze.includes("." | "!" | "?")) {
+    if (sentenceToAnalyze.includes("." || "!" || "?")) {
         let sentenceEndRegEx = /[.!?]/g;
         let sentenceToAnalyzeEndArray = sentenceToAnalyze.match(sentenceEndRegEx);
         sentenceEnd = sentenceToAnalyzeEndArray[0];
         // console.log(sentenceToAnalyzeEndArray);
-        console.log("Sentence ends with: " + sentenceEnd);
+        // console.log("Your sentence ends with: " + sentenceEnd);
         // Get substring from the beginning of the string until full stop. To guarantee to only take the first sentence, even if more is put in.
         firstSentenceToAnalyzeArray = sentenceToAnalyze.split(sentenceEnd); // need to respect ? and ! too.
         sentenceToAnalyze = firstSentenceToAnalyzeArray[0];
@@ -189,9 +193,9 @@ function sentenceAnalysis() {
     let regExLettersOnly = /[^a-zäöüß]/gi; // Remove everything except german and english letters of the alphabet in upper and lowercase.
     // let regEx = /[^a-zäöüß0-9.,"'<>-–—]/gi; // Remove everything except the stuff between square brackets.
     let charsToCount = sentenceToAnalyze.replaceAll(regExLettersOnly, '');
-    console.log(charsToCount);
+    // console.log(charsToCount);
     let charCount = charsToCount.length;
-
+    console.log("\n-----\n");
     if (charCount > 140) {
         console.log("Your sentence has more than 140 characters.");
     } else {
@@ -227,36 +231,66 @@ function sentenceAnalysis() {
     messUpSentence = sentenceToAnalyze.replaceAll('a', 'z');
     messUpSentence = messUpSentence.concat('', sentenceEnd);
 
-    console.log(`Look what I did to your sentence: "${messUpSentence}". Funny, right?`);
+    console.log(`Look what I did to your sentence: \n${messUpSentence}. \nFunny, right?`);
 
-    let curseWordsArray = ['Motherfucker', 'Motherfucking', 'Shit', 'Shite', 'Prick', 'Fuck', 'Fucking', 'Fucker', 'Piss', 'Ass', 'Bitch', 'Sucker', 'Asshole', 'Cunt', 'Dick', 'Wanker', 'Arsch', 'Penner', 'Arschloch', 'Depp', 'Idiot', 'Wichser', 'Lutscher', 'Abgefuckter', "Blöd"];
+    // Define array with curse words
+    let curseWordsArray = ['motherfucker', 'Motherfucking', 'Shit', 'Shite', 'Prick', 'Fuck', 'Fucking', 'Fucker', 'Piss', 'Ass', 'Bitch', 'Sucker', 'Asshole', 'Cunt', 'Dick', 'Wanker', 'Arsch', 'Penner', 'Arschloch', 'Depp', 'idiot', 'wichser', 'lutscher', 'abgefuckter', "blöd", "Hurensohn"];
+
+    // Convert array to lowercase, not needed as we use regex with parameter /gi which mathces gloablly and case insensitive
+    // curseWordsArray = curseWordsArray.join('|').toLowerCase().split('|');
+
     // Sort array by length descending
-    curseWordsArray.sort(function (a, b) {
+    curseWordsArray = curseWordsArray.sort(function (a, b) {
         // ASC  -> a.length - b.length
         // DESC -> b.length - a.length
         return b.length - a.length;
     });
-    console.log(curseWordsArray);
+
+
+    // console.log(curseWordsArray);
+
 
     let cleanSentence = sentenceToAnalyze;
     // console.log(cleanSentence);
 
+    // Clean the sentence and cover curse words by *
     for (let i = 0; i < curseWordsArray.length; i++) {
         let curseWord = curseWordsArray[i];
-        let curseWordRegEx = new RegExp(curseWord, "g");
-        // console.log(curseWordRegEx);
+        let curseWordCover = "";
+        let curseWordRegEx = new RegExp(curseWord, "gi");
         // console.log(curseWord);
-        if (cleanSentence.includes(curseWord)) {
-            console.log(curseWord);
-            cleanSentence = cleanSentence.replaceAll(curseWordRegEx, '***');
-        } else {
-            // console.log("No match found!");
-        }
+        // console.log(curseWordRegEx);
+        // console.log(curseWordCover);
+        // Determine 
+        curseWord.split('').forEach(element => {
+            curseWordCover += "*";
+        });
+        cleanSentence = cleanSentence.replaceAll(curseWordRegEx, curseWordCover);
     }
-    console.log(`I found inappropriate language and censored it for you: ${cleanSentence}${sentenceEnd}`)
+    // Add the last punctuation mark to the sentence again.
+    cleanSentence = cleanSentence.concat('', sentenceEnd);
+
+    // Log the sentence to console
+    console.log(`I found inappropriate language and censored it for you: \n${cleanSentence}`)
+    console.log("\n-----\n");
 }
 
 
-function cipherStuff() {
+function encipherStuff() {
+    console.log("\n-----\n");
+    let input = readlineSync.question("Hey! Tell me something to encipher.\n");
+    // Define alphabet
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < input.length; i++) {
+        let currentIndex = alphabet.indexOf(input[i]);
+        console.log(input[i]);
+        console.log(currentIndex);
+        // Get index of letter
+        // Calculate new index
+        // Replace letter with new letter
+    }
+}
+
+function decipherStuff() {
 
 }
