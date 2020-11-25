@@ -334,3 +334,24 @@ function decipherStuff() {
     console.log(output);
     console.log("\n-----\n");
 }
+
+
+// Test inputs for the bot
+
+// Hej man, you are a real asshole sometimes and this really really annoys me, you know.
+
+// Let's get it on, here's your sentence, let's see what you make of it. ß= 9 8m., 
+
+
+// Hallo Du lieber Bot, probier doch mal diese längeren Satz zu analysieren ohne Dich zu erschießen! . ? _.-"' 082
+
+// Hej, you're a real bad motherfucking motherfucker, you know that?
+
+// Hej Mann, Du bist ein echt richtig blödes Wichser-Arschloch, weißt Du das?  <sev<e rv.ve! =
+
+
+// Hej Mann, Du bist ein echt ein richtig blöder motherfucking Wichser und ein Arschloch und Hurensohn, weißt Du das? <sev<e rv.ve! =
+
+// ich heisse jonas x z
+
+// lfk khlvvh mrqdv a c
